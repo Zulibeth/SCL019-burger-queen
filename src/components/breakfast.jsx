@@ -1,5 +1,5 @@
 import React from "react";
-import data from "./data.json"
+import data from "../data.json"
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -9,7 +9,6 @@ const MenuBreakfast = () =>{
     const listOfBreakfast = data.breakFast;
     return(
         <div>
-            <h2> Desayunos</h2>
             {
                 listOfBreakfast.map((item) =>
                     // <p key={item.id}>{item.item} {item.precio}</p>;
