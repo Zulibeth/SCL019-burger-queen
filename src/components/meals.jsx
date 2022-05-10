@@ -1,6 +1,7 @@
-import React from "react";
+import { React,  Fragment } from "react";
 import data from "../data.json";
-import { Button, Grid } from "@mui/material";
+import { Button } from "@mui/material";
+
 
 const Meals = () => {
     const listOfMeals = data.meals;
@@ -8,12 +9,12 @@ const Meals = () => {
         <div>
             {
                 listOfMeals.map((item) => 
-                <Grid item>
-                    <Button variant="contained" size="small">
-                    {item.item}<br />
-                    {item.price}
-                    </Button>
-                </Grid>
+                <Fragment key={item.id}>
+                   <Button variant="contained" size="small">
+                      {item.item}
+                     ${item.precio}
+                   </Button>
+                </Fragment> 
                 )
             }
         </div>

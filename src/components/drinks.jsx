@@ -1,4 +1,4 @@
-import React from "react";
+import { React, Fragment } from "react";
 import data from "../data.json";
 import Button from '@mui/material/Button';
 
@@ -9,10 +9,13 @@ const Drinks = () => {
         <div>
             {
                 listOfDrinks.map((item) =>
-                <Button variant="contained" size="small">
-                    {item.item}<br />
-                    {item.precio}
-                </Button>)
+                <Fragment key={item.id}> 
+                  <Button variant="contained" size="small">
+                     {item.item}
+                    ${item.precio}
+                  </Button>
+                </Fragment>
+                )
             }
         </div>
     )
