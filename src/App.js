@@ -1,36 +1,36 @@
 
 import React from "react";
-// import MenuBreakfast from "./components/breakfast";
-// import Drinks from "./components/drinks";
-// import Meals from "./components/meals";
-import MenuSelected from "./components/menu";
-import { Button, Container, IconButton, Paper } from '@mui/material';
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { Container, IconButton } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
-
-// const MenuSelected = () => {
-//   return(
-//     <Meals />
-//   )
-// }
+import Home from "./views/home"
+import Order from "./views/order";
+import Kitchen from "./views/kitchen";
 
 function App() {
   return (
-    <Container>
-      <IconButton variant="contained" color="primary"> <HomeIcon fontSize="large"></HomeIcon></IconButton>
-      <h1>Order</h1>
+    <BrowserRouter>
+      <Container>
+        <Link to="/">
+          <IconButton variant="contained" color="primary"> 
+            <HomeIcon fontSize="large"></HomeIcon>
+          </IconButton>
+        </Link>
+        
+        
+        <Routes>
+
+          
+          <Route path="/order" element={<Order />} />
+          <Route path="/kitchen" element={<Kitchen />} />
+          <Route path="/" element={<Home />} />
+          
+        </Routes>
+        
+        
       
-      <br />
-     
-      <MenuSelected />
-
-      <br />
-      <Paper elevation={3}>
-        Take Order 
-      </Paper>
-      <br/>
-      <Button variant="contained" size="small" color="success">Send to <br/> Kitcken</Button>
-    </Container>
-
+      </Container>
+    </BrowserRouter>
     
   );
 }
