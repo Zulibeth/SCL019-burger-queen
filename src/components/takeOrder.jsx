@@ -5,6 +5,7 @@ import { Paper, Button } from "@mui/material";
 const TakeOrder = (props) => {
 
    const {cartItems, onAdd, onRemove} = props;
+   const totalPrice = cartItems.reduce((a,c) => a + c.precio * c.qty, 0);
     return (
         <div>
             <Paper elevation={3}>
@@ -31,6 +32,15 @@ const TakeOrder = (props) => {
                 ))}
             </div>
             </Paper>
+            {cartItems.length !== 0 && (
+                <>
+                    <hr></hr>
+                    <div>
+                        <div>TOTAL</div>
+                        <div>${totalPrice.toFixed(2)}</div>
+                    </div>
+                </>
+            ) }
 
 
 
