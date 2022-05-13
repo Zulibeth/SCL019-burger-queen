@@ -4,15 +4,17 @@ import Button from '@mui/material/Button';
 
 
 
-const MenuBreakfast = () =>{
+const MenuBreakfast = (props) =>{
     const listOfBreakfast = data.breakFast;
+
+    const {onAdd} = props;
   
     return(
         <div>
             {
                 listOfBreakfast.map((item) =>
                     <Fragment key={item.id}>
-                      <Button variant="contained" size="small">
+                      <Button onClick={() => onAdd(item)} variant="contained" size="small" >
                           {item.item} 
                          ${item.precio}
                       </Button>
