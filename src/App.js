@@ -1,7 +1,7 @@
 
 import React from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-import { Container, IconButton } from '@mui/material';
+import { Container, IconButton, Box } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import Home from "./views/home"
 import Order from "./views/order";
@@ -10,13 +10,15 @@ import Kitchen from "./views/kitchen";
 function App() {
   return (
     <BrowserRouter>
-      <Container>
-        <Link to="/">
-          <IconButton variant="contained" color="primary"> 
-            <HomeIcon fontSize="large"></HomeIcon>
-          </IconButton>
-        </Link>
+      <Container >
+      <Box sx={{ display: 'flex', minHeight: '100vh'  }}>
         
+          <Link to="/">
+            <IconButton variant="contained" color="primary"> 
+              <HomeIcon fontSize="large"></HomeIcon>
+            </IconButton>
+          </Link>
+       
         
         <Routes>
 
@@ -28,7 +30,7 @@ function App() {
         </Routes>
         
         
-      
+        </Box>
       </Container>
     </BrowserRouter>
     

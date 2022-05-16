@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MenuSelected from "../components/menu";
 import TakeOrder from "../components/takeOrder";
-import { Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 // import data from "../data.json"
 
 
@@ -36,11 +36,13 @@ const Order = () => {
 
     return(
         <Container>
-             <h1>Order</h1>
+            <Grid container >
+                <h1>Order</h1>
+                
+                <MenuSelected onAdd={onAdd} />
 
-            <MenuSelected onAdd={onAdd} />
-
-            <TakeOrder onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} />
+                <TakeOrder onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} />
+            </Grid>
         </Container>
        
     )

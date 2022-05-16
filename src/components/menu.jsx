@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MenuBreakfast from "./breakfast";
 import Meals from "./meals";
 import Drinks from "./drinks";
-import { Button, Container, Grid } from "@mui/material";
+import { Button, Container, Grid, Box } from "@mui/material";
 
 const MenuSelected = (props) => {
 
@@ -13,26 +13,30 @@ const MenuSelected = (props) => {
     return(
         <Container>
             <Grid container>
-                <Grid item  >
+                <Box my={2}>
                 <Button variant={ menu === "breakfast" ? "contained" : "outlined"} size="small" onClick={()=>setMenu("breakfast")}>Break-Fast</Button>
                 <Button variant={menu !== "breakfast" ? "contained" : "outlined"} size="small" onClick={()=>setMenu("meals")}>Meal's</Button>
-                </Grid>
+                </Box>
             </Grid>
             
-            <Grid container rowspacing={1}>
-                <Grid item xs={6} md={6}>
-                    {menu === "breakfast" && <MenuBreakfast onAdd={onAdd} />}
-                    {menu !== "breakfast" && <Meals onAdd={onAdd}/>}
-                </Grid>
+            <Grid container>
+                <Box my={2}>
+                    <Grid item xs={8} md={8}>
+                        {menu === "breakfast" && <MenuBreakfast onAdd={onAdd} />}
+                        {menu !== "breakfast" && <Meals onAdd={onAdd}/>}
+                    </Grid>
+                </Box>
             </Grid>
 
            
           
             <Button variant="contained" size="small">Drink's</Button>
             <Grid container>
-                <Grid item xs={6} md={6}>
-                <Drinks onAdd={onAdd} />
-                </Grid>
+                <Box my={2}>
+                    <Grid item sm={8} >
+                    <Drinks onAdd={onAdd} />
+                    </Grid>
+                </Box>
             </Grid>
             
             

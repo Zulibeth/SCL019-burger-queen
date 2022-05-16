@@ -1,36 +1,56 @@
 import React from "react";
-import { Paper, Button } from "@mui/material";
+import { Paper, Button, IconButton } from "@mui/material";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import { Box } from "@mui/system";
 
+
+
+// const useStyles = makeStyles((theme) => ({
+//     root:{
+//         "& > *": {
+//             margin: theme.spacing(1),
+//             width: theme.spacing(32),
+//             height: theme.spacing(16),
+//             borderRadius: 25
+//         }
+//     }
+
+// }));
 
 const TakeOrder = (props) => {
 
    const {cartItems, onAdd, onRemove} = props;
    const totalPrice = cartItems.reduce((a,c) => a + c.precio * c.qty, 0);
+
+//    const classes = useStyles();
     return (
         <div>
-            <Paper elevation={3}>
-            Take Order 
+            <Paper sx={{ elevation:"3" }} >
+            <h3>Take Order </h3>
+            <Box sx={{ display: 'inline', justifyContent: 'center', alignItems: 'center' }}>
+                <div>
+                    {cartItems.length === 0 && <div> --- </div>}
+                </div>
+                <div>
+                    {cartItems.map((item) =>(
+                        <div key={item.id}>
+                            <h4>{item.item}</h4>
 
-            <div>
-                {cartItems.length === 0 && <div> No Order Yet </div>}
-            </div>
-            <div>
-                {cartItems.map((item) =>(
-                    <div key={item.id}>
-                        <div>{item.item}</div>
+                            <div>
+                                <IconButton onClick={() => onAdd(item)}><AddCircleOutlineIcon fontSize="small"/></IconButton>
+                                <div>
+                                {item.qty} x ${item.precio.toFixed(2)}
+                                </div>
+                                <IconButton onClick={() => onRemove(item)}><RemoveCircleOutlineIcon fontSize="small" /></IconButton>
+                            </div>
 
-                        <div>
-                            <button onClick={() => onAdd(item)}>+</button>
-                            <button onClick={() => onRemove(item)}>-</button>
+                            
                         </div>
 
-                        <div>
-                            {item.qty} x ${item.precio.toFixed(2)}
-                        </div>
-                    </div>
-
-                ))}
-            </div>
+                    ))}
+                </div>
+            </Box>
             </Paper>
             {cartItems.length !== 0 && (
                 <>

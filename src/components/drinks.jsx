@@ -13,8 +13,8 @@ const Drinks = (props) => {
                 listOfDrinks.map((item) =>
                 <Fragment key={item.id}> 
                   <Button onClick={() => onAdd(item)} variant="contained" size="small">
-                     {item.item}
-                    ${item.precio}
+                  <span>{item.item}</span>
+                  <span>${item.precio}</span>
                   </Button>
                 </Fragment>
                 )
