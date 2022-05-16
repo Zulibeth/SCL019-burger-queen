@@ -11,14 +11,15 @@ function App() {
   return (
     <BrowserRouter>
       <Container >
-      <Box sx={{ display: 'flex', minHeight: '100vh'  }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'  }}>
         
-          <Link to="/">
-            <IconButton variant="contained" color="primary"> 
-              <HomeIcon fontSize="large"></HomeIcon>
-            </IconButton>
-          </Link>
-       
+        <Box sx={{display:"flex", justifyContent:"flex-end", m:2}}>
+            <Link to="/">
+              <IconButton variant="contained" color="primary"> 
+                <HomeIcon fontSize="large"></HomeIcon>
+              </IconButton>
+            </Link>
+          </Box>
         
         <Routes>
 

@@ -11,7 +11,7 @@
     },
     {
         "id": "3",
-        "item": "Ham&Cheese ",
+        "item": " Sub Ham y Queso ",
         "precio": 5
     },
     {
@@ -43,22 +43,22 @@
     ],
     "drinks":[
         {   "id": "9",
-            "item": " Agua 500ml ",
+            "item": " Agua 500 ml ",
             "precio": 5
         },
         {
             "id": "10",
-            "item": " Agua 750ml ",
+            "item": " Agua 750 ml ",
             "precio": 7
         },
         {
             "id": "11",
-            "item": " Bebida 500ml ",
+            "item": " Bebida 500 ml ",
             "precio": 7
         },
         {
             "id": "12",
-            "item": " Bebida 750ml ",
+            "item": " Bebida 750 ml ",
             "precio": 10
         }
     ]

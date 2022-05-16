@@ -30,7 +30,7 @@ const MenuSelected = (props) => {
 
            
           
-            <Button variant="contained" size="small">Drink's</Button>
+            <Button variant="contained" color="primary" size="small">Drink's</Button>
             <Grid container>
                 <Box my={2}>
                     <Grid item sm={8} >
